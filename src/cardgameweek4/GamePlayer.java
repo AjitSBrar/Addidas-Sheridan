@@ -9,12 +9,37 @@ public class GamePlayer {
 
 	public static void main(String[] args) {
 		CardHand ch = new CardHand();
-                ch.generateHand();
-                for(Card c: ch.cards)
+                ch.generateDeck();
+                for(Card c: ch.deck)
                 {
                     System.out.println(c.getValue() + " of " + c.getSuit());
                 }
-               // System.out.println(ch.cards); show what happens when there is no toString()
+                
+                ch.shuffleDeck();
+                
+                for(Card c: ch.shuffledDeck)
+                {
+                    System.out.println(c.getValue() + " of " + c.getSuit());
+                }
+                
+                System.out.println();
+                System.out.println();
+                ch.splitDeck();
+                
+                for(Card c: ch.deckP1)
+                {
+                    System.out.println(c.getValue() + " of " + c.getSuit());
+                }
+                
+                System.out.println();
+                System.out.println();
+                
+                for(Card c: ch.deckCPU)
+                {
+                    System.out.println(c.getValue() + " of " + c.getSuit());
+                }
+                
+               
 	}
 
 }
