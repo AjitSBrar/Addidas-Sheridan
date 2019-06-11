@@ -1,4 +1,6 @@
 package cardgameweek4;
+
+import java.lang.Enum;
 /**
  * A class to handle the user interaction for the Card
  * project. Contains a main method that generates a card hand
@@ -39,7 +41,14 @@ public class GamePlayer {
                     System.out.println(c.getValue() + " of " + c.getSuit());
                 }
                 
-               
+                for(Card c: ch.shuffledDeck)
+                {
+                
+                }
+                
+                //to access value of specific array elements
+                Card c = ch.deckCPU.get(0);
+                System.out.println(c.getValue().ordinal());
 	}
 
 }

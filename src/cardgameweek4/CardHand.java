@@ -15,8 +15,8 @@ public class CardHand {
     private int handSize = 52;
     public Card[] deck = new Card[handSize];
     public Card[] shuffledDeck = new Card[handSize];
-    public Card[] deckP1 = new Card[handSize/2];
-    public Card[] deckCPU = new Card[handSize/2];
+    public ArrayList<Card> deckP1 = new ArrayList<>(handSize/2);
+    public ArrayList<Card> deckCPU = new ArrayList<>(handSize/2);
     
 
     /**
@@ -53,11 +53,11 @@ public class CardHand {
     public void splitDeck(){
 
         for(int dex = 0; dex < handSize; dex+=2){
-           deckP1[dex/2] = shuffledDeck[dex];
+           deckP1.add(shuffledDeck[dex]);
         }
         
         for(int dex = 1; dex < handSize; dex+=2){
-            deckCPU[dex/2] = shuffledDeck[dex];
+            deckCPU.add(shuffledDeck[dex]);
         }
     }
 
